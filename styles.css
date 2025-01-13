@@ -1,0 +1,390 @@
+/* General Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  color: #ddd;
+  background: #121212;
+  line-height: 1.6;
+  scroll-behavior: smooth;
+  transition: background 0.3s ease;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* Header */
+header {
+  background: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  padding: 1rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  transition: background 0.3s;
+}
+
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header nav ul {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+
+header nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 5px;
+  transition: color 0.3s, transform 0.3s;
+}
+
+header nav a:hover {
+  color: #00aaff;
+  transform: scale(1.1);
+}
+
+/* Hero Section */
+.hero {
+  height: 100vh;
+  background: url('hero-bg.jpg') no-repeat center center/cover;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.7);
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-content h1 {
+  font-size: 4rem;
+  animation: fadeInUp 2s ease-out;
+}
+
+.hero-content p {
+  font-size: 1.5rem;
+  margin: 1rem 0;
+}
+
+.hero .btn {
+  background: #00aaff;
+  color: #fff;
+  padding: 0.8rem 2rem;
+  text-decoration: none;
+  border-radius: 50px;
+  transition: background 0.3s ease;
+  z-index: 2;
+}
+
+.hero .btn:hover {
+  background: #0088cc;
+}
+
+.scroll-indicator {
+  position: absolute;
+  bottom: 2rem;
+  text-align: center;
+  animation: fadeInUp 3s infinite;
+  z-index: 2;
+}
+
+.scroll-indicator span {
+  display: block;
+  color: #fff;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.scroll-indicator .arrow {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #fff;
+  border-left: none;
+  border-top: none;
+  transform: rotate(45deg);
+  margin: auto;
+  animation: bounce 1.5s infinite;
+}
+
+/* Services Section */
+#services {
+  padding: 4rem 0;
+  background: #1e1e1e;
+}
+
+#services h2 {
+  text-align: center;
+  font-size: 3rem;
+  color: #00aaff;
+  margin-bottom: 2rem;
+}
+
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.service-card {
+  background: #212121;
+  padding: 2rem;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.5);
+}
+
+.service-card .icon {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+}
+
+.service-card h3 {
+  color: #fff;
+  font-size: 1.5rem;
+}
+
+.service-card p {
+  color: #ddd;
+  font-size: 1rem;
+}
+
+/* Portfolio Section */
+#portfolio {
+  background: #121212;
+  padding: 4rem 0;
+}
+
+#portfolio h2 {
+  text-align: center;
+  font-size: 3rem;
+  color: #00aaff;
+  margin-bottom: 2rem;
+}
+
+.portfolio-slider {
+  display: flex;
+  gap: 2rem;
+  overflow-x: scroll;
+  padding: 0 2rem;
+}
+
+.portfolio-item {
+  background: #333;
+  padding: 1rem;
+  width: 300px;
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.portfolio-item:hover {
+  transform: scale(1.05);
+}
+
+.portfolio-item img {
+  width: 100%;
+  border-radius: 5px;
+}
+
+.portfolio-item h4 {
+  margin-top: 1rem;
+  text-align: center;
+  color: #fff;
+  font-size: 1.2rem;
+}
+
+/* Modal Styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: #333;
+  padding: 2rem;
+  border-radius: 10px;
+  text-align: center;
+  max-width: 500px;
+  width: 100%;
+  color: #fff;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 2rem;
+  cursor: pointer;
+  color: #fff;
+}
+
+.modal h2 {
+  font-size: 2rem;
+  color: #00aaff;
+}
+
+.modal p {
+  font-size: 1.2rem;
+  margin-top: 1rem;
+}
+
+.modal.show {
+  display: flex;
+  opacity: 1;
+}
+
+/* About Section */
+#about {
+  padding: 4rem 0;
+  background: #1e1e1e;
+  color: #ddd;
+  text-align: center;
+}
+
+#about h2 {
+  font-size: 3rem;
+  color: #00aaff;
+  margin-bottom: 1.5rem;
+}
+
+#about p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+#about .btn {
+  background: #00aaff;
+  color: #fff;
+  padding: 0.8rem 2rem;
+  border-radius: 50px;
+  transition: background 0.3s ease;
+}
+
+#about .btn:hover {
+  background: #0088cc;
+}
+
+/* Contact Section */
+#contact {
+  padding: 4rem 0;
+  background: #121212;
+}
+
+#contact h2 {
+  font-size: 3rem;
+  color: #00aaff;
+  margin-bottom: 1.5rem;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+form input, form textarea {
+  background: #212121;
+  border: 1px solid #333;
+  padding: 1rem;
+  color: #ddd;
+  font-size: 1rem;
+  border-radius: 8px;
+}
+
+form input:focus, form textarea:focus {
+  background: #333;
+  outline: none;
+}
+
+form button {
+  background: #00aaff;
+  color: #fff;
+  padding: 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+form button:hover {
+  background: #0088cc;
+}
+
+/* Footer */
+footer {
+  background: #121212;
+  color: #777;
+  text-align: center;
+  padding: 2rem 0;
+}
+
+footer p {
+  font-size: 1rem;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: rotate(45deg) translateY(0);
+  }
+  50% {
+    transform: rotate(45deg) translateY(-10px);
+  }
+}
